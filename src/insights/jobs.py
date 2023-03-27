@@ -14,7 +14,6 @@ def get_unique_job_types(path: str) -> List[str]:
     unique_type = set()
     for job in read(path):
         unique_type.add(job["job_type"])
-        print(unique_type)
     return list(unique_type)
 
 
@@ -34,3 +33,7 @@ def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
         List of jobs with provided job_type
     """
     raise NotImplementedError
+
+
+if __name__ == "__main__":
+    print(read("data/jobs.csv"))
