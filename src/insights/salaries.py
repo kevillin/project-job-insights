@@ -1,5 +1,5 @@
 from typing import Union, List, Dict
-from src.insights.jobs import read
+from jobs import read
 
 
 def get_max_salary(path: str) -> int:
@@ -51,5 +51,15 @@ def filter_by_salary_range(
     return filter
 
 
+def verifica_ocurrencias(path: str) -> int:
+    palavra = set()
+    consulta = read(path)
+    for job in consulta:
+        print(job["understanding"])
+
+    return list(palavra).count()
+
+
 if __name__ == "__main__":
-    print(get_max_salary("data/jobs.csv"))
+    # print(get_max_salary("data/jobs.csv"))
+    print(verifica_ocurrencias("data/jobs.csv"))
